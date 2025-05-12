@@ -142,7 +142,7 @@ namespace LGSTrackingSystem
             var result = MessageBox.Show("Are you sure you want to delete this student and their associated results?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
-                return; 
+                return;
             }
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -298,7 +298,42 @@ namespace LGSTrackingSystem
                 MessageBox.Show("Password must contain at least one letter.");
                 return false;
             }
+            else if (!ValidateEmail())
+            {
+                return false;
+            }
+
             return true;
+        }
+        private bool ValidateEmail()
+        {
+            var validDomains = new List<string> { "@gmail.com", "@yahoo.com", "@outlook.com" };
+
+            if (!IsValidEmailDomain(textBoxEmail.Text, validDomains))
+            {
+                MessageBox.Show("Email must end with a valid domain (e.g., @gmail.com, @yahoo.com, @outlook.com).", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxEmail.Focus();
+                return false;
+            }
+
+            return true;
+        }
+        private bool IsValidEmailDomain(string email, List<string> validDomains)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return false;
+            }
+
+            foreach (var domain in validDomains)
+            {
+                if (email.EndsWith(domain, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
         #endregion
         #region management panel
@@ -494,9 +529,10 @@ namespace LGSTrackingSystem
                 try
                 {
                     connection.Open();
-                    string addExamQuery = "INSERT INTO EXAMS (EXAM_NAME) VALUES (@examName)";
+                    string addExamQuery = "INSERT INTO EXAMS (EXAM_NAME, EXAM_TYPE) VALUES (@examName , @examType)";
                     SqlCommand addExamCommand = new SqlCommand(addExamQuery, connection);
                     addExamCommand.Parameters.AddWithValue("@examName", textBoxMngExamName.Text);
+                    addExamCommand.Parameters.AddWithValue("@examType", "Official");
                     addExamCommand.ExecuteNonQuery();
                     MessageBox.Show("Exam added successfully.");
                 }
@@ -512,7 +548,7 @@ namespace LGSTrackingSystem
             var result = MessageBox.Show("Are you sure you want to delete this exam?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
-                return; 
+                return;
             }
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -616,7 +652,7 @@ namespace LGSTrackingSystem
             var result = MessageBox.Show("Are you sure you want to delete this result?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
-                return; 
+                return;
             }
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -649,12 +685,12 @@ namespace LGSTrackingSystem
                 SELECT 
                     STUDENT_ID AS [Student ID], 
                     (SELECT EXAM_NAME FROM EXAMS WHERE EXAMS.EXAM_ID = RESULTS.EXAM_ID) AS [Exam Name], 
+                    (SELECT EXAM_TYPE FROM EXAMS WHERE EXAMS.EXAM_ID = RESULTS.EXAM_ID) AS [Exam Type],
                     SUM(TRUE_COUNT) AS [True], 
                     SUM(FALSE_COUNT) AS [False], 
                     SUM(BLANK_COUNT) AS [Blank]
                 FROM RESULTS
                 GROUP BY STUDENT_ID, EXAM_ID";
-
                     SqlCommand command = new SqlCommand(query, connection);
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
@@ -669,20 +705,51 @@ namespace LGSTrackingSystem
         }
         private bool ResultValidation()
         {
-            var requiredTextBoxes = new List<TextBox>{
-            textBoxTrueMath, textBoxBlankMath, textBoxFalseMath,
-            textBoxTrueScience, textBoxBlankScience, textBoxFalseScience,
-            textBoxTrueTurkish, textBoxBlankTurkish, textBoxFalseTurkish,
-            textBoxTrueHistory, textBoxBlankHistory, textBoxFalseHistory,
-            textBoxTrueReligion, textBoxBlankReligion, textBoxFalseReligion,
-            textBoxTrueEnglish, textBoxBlankEnglish, textBoxFalseEnglish};
-
-            foreach (var textbox in requiredTextBoxes)
+            var subjectLimits = new Dictionary<string, int>
             {
-                if (string.IsNullOrWhiteSpace(textbox.Text) || !int.TryParse(textbox.Text, out _))
+                { "Mathematics", 20 },
+                { "Science", 20 },
+                { "Turkish", 20 },
+                { "History", 10 },
+                { "Religion", 10 },
+                { "English", 10 }
+            };
+
+            var subjectTextBoxes = new Dictionary<string, (TextBox True, TextBox False, TextBox Blank)>
+            {
+                { "Mathematics", (textBoxTrueMath, textBoxFalseMath, textBoxBlankMath) },
+                { "Science", (textBoxTrueScience, textBoxFalseScience, textBoxBlankScience) },
+                { "Turkish", (textBoxTrueTurkish, textBoxFalseTurkish, textBoxBlankTurkish) },
+                { "History", (textBoxTrueHistory, textBoxFalseHistory, textBoxBlankHistory) },
+                { "Religion", (textBoxTrueReligion, textBoxFalseReligion, textBoxBlankReligion) },
+                { "English", (textBoxTrueEnglish, textBoxFalseEnglish, textBoxBlankEnglish) }
+            };
+
+            foreach (var subject in subjectTextBoxes)
+            {
+                var (trueBox, falseBox, blankBox) = subject.Value;
+  
+                if (!int.TryParse(trueBox.Text, out int trueCount) ||
+                    !int.TryParse(falseBox.Text, out int falseCount) ||
+                    !int.TryParse(blankBox.Text, out int blankCount))
                 {
-                    MessageBox.Show("All fields must be filled with valid whole numbers.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    textbox.Focus();
+                    MessageBox.Show($"All fields for {subject.Key} must be filled with valid whole numbers.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    trueBox.Focus();
+                    return false;
+                }
+ 
+                int total = trueCount + falseCount + blankCount;
+                if (total > subjectLimits[subject.Key])
+                {
+                    MessageBox.Show($"The total number of answers for {subject.Key} cannot exceed {subjectLimits[subject.Key]}.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    trueBox.Focus();
+                    return false;
+                }
+
+                if (total != subjectLimits[subject.Key] && total != 0)
+                {
+                    MessageBox.Show($"The total number of answers for {subject.Key} must exactly match {subjectLimits[subject.Key]} if all questions are answered.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    trueBox.Focus();
                     return false;
                 }
             }

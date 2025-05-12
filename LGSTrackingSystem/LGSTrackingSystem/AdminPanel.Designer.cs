@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -45,6 +46,12 @@
             dataGridViewStudents = new DataGridView();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            textBoxExamName = new TextBox();
+            textBoxTestStudentID = new TextBox();
+            panel2 = new Panel();
+            label7 = new Label();
+            label23 = new Label();
+            btnTestHistory = new Button();
             btnRemoveResult = new Button();
             panel1 = new Panel();
             btnDeleteExam = new Button();
@@ -52,11 +59,6 @@
             textBoxMngExamName = new TextBox();
             label25 = new Label();
             label24 = new Label();
-            textBoxExamName = new TextBox();
-            label23 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            label22 = new Label();
             label19 = new Label();
             label18 = new Label();
             label17 = new Label();
@@ -88,10 +90,7 @@
             btnAddResult = new Button();
             btnShowResults = new Button();
             dataGridViewResults = new DataGridView();
-            textBoxTestStudentID = new TextBox();
-            label7 = new Label();
             tabPage1 = new TabPage();
-            btnListStudents = new Button();
             textBoxAdress = new TextBox();
             label16 = new Label();
             label15 = new Label();
@@ -99,140 +98,162 @@
             textBoxEmail = new TextBox();
             radioWoman = new RadioButton();
             radioMan = new RadioButton();
-            btnTestHistory = new Button();
+            btnListStudents = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
+            panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
             tabPage1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(212, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(109, 15);
-            label1.TabIndex = 0;
-            label1.Text = "MANAGE STUDENT";
-            // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label2.Location = new Point(60, 48);
             label2.Name = "label2";
-            label2.Size = new Size(73, 15);
+            label2.Size = new Size(89, 17);
             label2.TabIndex = 1;
             label2.Text = "STUDENT ID:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 77);
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label3.Location = new Point(99, 77);
             label3.Name = "label3";
-            label3.Size = new Size(96, 15);
+            label3.Size = new Size(50, 17);
             label3.TabIndex = 2;
-            label3.Text = "STUDENT NAME:";
+            label3.Text = "NAME:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(16, 106);
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label4.Location = new Point(75, 106);
             label4.Name = "label4";
-            label4.Size = new Size(117, 15);
+            label4.Size = new Size(74, 17);
             label4.TabIndex = 3;
-            label4.Text = "STUDENT SURNAME:";
+            label4.Text = "SURNAME:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(307, 51);
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label5.Location = new Point(339, 48);
             label5.Name = "label5";
-            label5.Size = new Size(71, 15);
+            label5.Size = new Size(81, 17);
             label5.TabIndex = 4;
             label5.Text = "USERNAME:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(307, 80);
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label6.Location = new Point(337, 77);
             label6.Name = "label6";
-            label6.Size = new Size(71, 15);
+            label6.Size = new Size(83, 17);
             label6.TabIndex = 5;
             label6.Text = "PASSWORD:";
             // 
             // textBoxStudentID
             // 
-            textBoxStudentID.Location = new Point(133, 45);
+            textBoxStudentID.Location = new Point(155, 45);
             textBoxStudentID.Name = "textBoxStudentID";
             textBoxStudentID.Size = new Size(100, 23);
-            textBoxStudentID.TabIndex = 6;
+            textBoxStudentID.TabIndex = 0;
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(133, 74);
+            textBoxName.Location = new Point(155, 74);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(100, 23);
-            textBoxName.TabIndex = 7;
+            textBoxName.TabIndex = 1;
             // 
             // textBoxSurname
             // 
-            textBoxSurname.Location = new Point(133, 103);
+            textBoxSurname.Location = new Point(155, 103);
             textBoxSurname.Name = "textBoxSurname";
             textBoxSurname.Size = new Size(100, 23);
-            textBoxSurname.TabIndex = 8;
+            textBoxSurname.TabIndex = 2;
             // 
             // textBoxUsername
             // 
-            textBoxUsername.Location = new Point(384, 48);
+            textBoxUsername.Location = new Point(426, 45);
             textBoxUsername.Name = "textBoxUsername";
             textBoxUsername.Size = new Size(100, 23);
-            textBoxUsername.TabIndex = 9;
+            textBoxUsername.TabIndex = 6;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(384, 77);
+            textBoxPassword.Location = new Point(426, 74);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(100, 23);
-            textBoxPassword.TabIndex = 10;
+            textBoxPassword.TabIndex = 7;
             // 
             // btnAddStudent
             // 
-            btnAddStudent.Location = new Point(689, 57);
+            btnAddStudent.BackColor = Color.FromArgb(161, 164, 175);
+            btnAddStudent.FlatStyle = FlatStyle.Popup;
+            btnAddStudent.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAddStudent.ForeColor = Color.White;
+            btnAddStudent.Location = new Point(711, 57);
             btnAddStudent.Name = "btnAddStudent";
             btnAddStudent.Size = new Size(75, 23);
-            btnAddStudent.TabIndex = 11;
+            btnAddStudent.TabIndex = 9;
             btnAddStudent.Text = "ADD";
-            btnAddStudent.UseVisualStyleBackColor = true;
+            btnAddStudent.UseVisualStyleBackColor = false;
             btnAddStudent.Click += btnAddStudent_Click;
             // 
             // btnUpdateStudent
             // 
-            btnUpdateStudent.Location = new Point(689, 86);
+            btnUpdateStudent.BackColor = Color.FromArgb(161, 164, 175);
+            btnUpdateStudent.FlatStyle = FlatStyle.Popup;
+            btnUpdateStudent.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnUpdateStudent.ForeColor = Color.White;
+            btnUpdateStudent.Location = new Point(711, 86);
             btnUpdateStudent.Name = "btnUpdateStudent";
             btnUpdateStudent.Size = new Size(75, 23);
-            btnUpdateStudent.TabIndex = 12;
+            btnUpdateStudent.TabIndex = 10;
             btnUpdateStudent.Text = "UPDATE";
-            btnUpdateStudent.UseVisualStyleBackColor = true;
+            btnUpdateStudent.UseVisualStyleBackColor = false;
             btnUpdateStudent.Click += btnUpdateStudent_Click;
             // 
             // btnDeleteStudent
             // 
-            btnDeleteStudent.Location = new Point(689, 115);
+            btnDeleteStudent.BackColor = Color.FromArgb(161, 164, 175);
+            btnDeleteStudent.FlatStyle = FlatStyle.Popup;
+            btnDeleteStudent.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnDeleteStudent.ForeColor = Color.White;
+            btnDeleteStudent.Location = new Point(711, 115);
             btnDeleteStudent.Name = "btnDeleteStudent";
             btnDeleteStudent.Size = new Size(75, 23);
-            btnDeleteStudent.TabIndex = 13;
+            btnDeleteStudent.TabIndex = 11;
             btnDeleteStudent.Text = "DELETE";
-            btnDeleteStudent.UseVisualStyleBackColor = true;
+            btnDeleteStudent.UseVisualStyleBackColor = false;
             btnDeleteStudent.Click += btnDeleteStudent_Click;
             // 
             // dataGridViewStudents
             // 
+            dataGridViewStudents.AllowUserToAddRows = false;
+            dataGridViewStudents.AllowUserToDeleteRows = false;
+            dataGridViewStudents.AllowUserToResizeColumns = false;
+            dataGridViewStudents.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.MistyRose;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewStudents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewStudents.BackgroundColor = Color.White;
             dataGridViewStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudents.Location = new Point(3, 225);
+            dataGridViewStudents.Location = new Point(6, 218);
             dataGridViewStudents.Name = "dataGridViewStudents";
-            dataGridViewStudents.Size = new Size(845, 241);
+            dataGridViewStudents.ReadOnly = true;
+            dataGridViewStudents.RowHeadersVisible = false;
+            dataGridViewStudents.Size = new Size(842, 248);
             dataGridViewStudents.TabIndex = 14;
             // 
             // tabControl1
@@ -243,18 +264,17 @@
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(862, 500);
-            tabControl1.TabIndex = 15;
+            tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.Lavender;
+            tabPage2.Controls.Add(textBoxExamName);
+            tabPage2.Controls.Add(textBoxTestStudentID);
+            tabPage2.Controls.Add(panel2);
             tabPage2.Controls.Add(btnTestHistory);
             tabPage2.Controls.Add(btnRemoveResult);
             tabPage2.Controls.Add(panel1);
-            tabPage2.Controls.Add(textBoxExamName);
-            tabPage2.Controls.Add(label23);
-            tabPage2.Controls.Add(label20);
-            tabPage2.Controls.Add(label21);
-            tabPage2.Controls.Add(label22);
             tabPage2.Controls.Add(label19);
             tabPage2.Controls.Add(label18);
             tabPage2.Controls.Add(label17);
@@ -286,140 +306,172 @@
             tabPage2.Controls.Add(btnAddResult);
             tabPage2.Controls.Add(btnShowResults);
             tabPage2.Controls.Add(dataGridViewResults);
-            tabPage2.Controls.Add(textBoxTestStudentID);
-            tabPage2.Controls.Add(label7);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(854, 472);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "TEST MANAGEMENT PANEL";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Text = "Manage Tests";
+            // 
+            // textBoxExamName
+            // 
+            textBoxExamName.Location = new Point(416, 121);
+            textBoxExamName.Name = "textBoxExamName";
+            textBoxExamName.Size = new Size(116, 23);
+            textBoxExamName.TabIndex = 1;
+            // 
+            // textBoxTestStudentID
+            // 
+            textBoxTestStudentID.Location = new Point(416, 92);
+            textBoxTestStudentID.Name = "textBoxTestStudentID";
+            textBoxTestStudentID.Size = new Size(116, 23);
+            textBoxTestStudentID.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(245, 247, 255);
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(label23);
+            panel2.Location = new Point(316, 79);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(236, 79);
+            panel2.TabIndex = 38;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.FromArgb(245, 247, 255);
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label7.Location = new Point(15, 13);
+            label7.Name = "label7";
+            label7.Size = new Size(78, 17);
+            label7.TabIndex = 0;
+            label7.Text = "Student ID:";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.BackColor = Color.FromArgb(245, 247, 255);
+            label23.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label23.Location = new Point(8, 42);
+            label23.Name = "label23";
+            label23.Size = new Size(85, 17);
+            label23.TabIndex = 35;
+            label23.Text = "Exam Name:";
+            // 
+            // btnTestHistory
+            // 
+            btnTestHistory.BackColor = Color.FromArgb(161, 164, 175);
+            btnTestHistory.FlatStyle = FlatStyle.Popup;
+            btnTestHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnTestHistory.ForeColor = Color.White;
+            btnTestHistory.Location = new Point(6, 214);
+            btnTestHistory.Name = "btnTestHistory";
+            btnTestHistory.Size = new Size(115, 23);
+            btnTestHistory.TabIndex = 20;
+            btnTestHistory.Text = "Test History";
+            btnTestHistory.UseVisualStyleBackColor = false;
+            btnTestHistory.Click += btnTestHistory_Click;
             // 
             // btnRemoveResult
             // 
-            btnRemoveResult.Location = new Point(558, 183);
+            btnRemoveResult.BackColor = Color.FromArgb(161, 164, 175);
+            btnRemoveResult.FlatStyle = FlatStyle.Popup;
+            btnRemoveResult.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnRemoveResult.ForeColor = Color.White;
+            btnRemoveResult.Location = new Point(558, 214);
             btnRemoveResult.Name = "btnRemoveResult";
             btnRemoveResult.Size = new Size(117, 23);
-            btnRemoveResult.TabIndex = 38;
+            btnRemoveResult.TabIndex = 22;
             btnRemoveResult.Text = "Remove Result";
-            btnRemoveResult.UseVisualStyleBackColor = true;
+            btnRemoveResult.UseVisualStyleBackColor = false;
             btnRemoveResult.Click += btnRemoveResult_Click;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Salmon;
+            panel1.BackColor = Color.FromArgb(245, 247, 255);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnDeleteExam);
             panel1.Controls.Add(btnAddExam);
             panel1.Controls.Add(textBoxMngExamName);
             panel1.Controls.Add(label25);
             panel1.Controls.Add(label24);
-            panel1.Location = new Point(55, 34);
+            panel1.Location = new Point(53, 41);
             panel1.Name = "panel1";
-            panel1.Size = new Size(219, 145);
+            panel1.Size = new Size(222, 139);
             panel1.TabIndex = 37;
             // 
             // btnDeleteExam
             // 
-            btnDeleteExam.Location = new Point(112, 93);
+            btnDeleteExam.BackColor = Color.FromArgb(161, 164, 175);
+            btnDeleteExam.FlatStyle = FlatStyle.Popup;
+            btnDeleteExam.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnDeleteExam.ForeColor = Color.White;
+            btnDeleteExam.Location = new Point(113, 93);
             btnDeleteExam.Name = "btnDeleteExam";
             btnDeleteExam.Size = new Size(76, 23);
-            btnDeleteExam.TabIndex = 4;
+            btnDeleteExam.TabIndex = 2;
             btnDeleteExam.Text = "DELETE";
-            btnDeleteExam.UseVisualStyleBackColor = true;
+            btnDeleteExam.UseVisualStyleBackColor = false;
             btnDeleteExam.Click += btnDeleteExam_Click;
             // 
             // btnAddExam
             // 
-            btnAddExam.Location = new Point(31, 93);
+            btnAddExam.BackColor = Color.FromArgb(161, 164, 175);
+            btnAddExam.FlatStyle = FlatStyle.Popup;
+            btnAddExam.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAddExam.ForeColor = Color.White;
+            btnAddExam.Location = new Point(32, 93);
             btnAddExam.Name = "btnAddExam";
             btnAddExam.Size = new Size(75, 23);
-            btnAddExam.TabIndex = 3;
+            btnAddExam.TabIndex = 1;
             btnAddExam.Text = "ADD";
-            btnAddExam.UseVisualStyleBackColor = true;
+            btnAddExam.UseVisualStyleBackColor = false;
             btnAddExam.Click += btnAddExam_Click;
             // 
             // textBoxMngExamName
             // 
-            textBoxMngExamName.Location = new Point(99, 46);
+            textBoxMngExamName.Location = new Point(100, 51);
             textBoxMngExamName.Name = "textBoxMngExamName";
             textBoxMngExamName.Size = new Size(100, 23);
-            textBoxMngExamName.TabIndex = 2;
+            textBoxMngExamName.TabIndex = 0;
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(14, 49);
+            label25.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label25.Location = new Point(6, 54);
             label25.Name = "label25";
-            label25.Size = new Size(79, 15);
+            label25.Size = new Size(91, 17);
             label25.TabIndex = 1;
             label25.Text = "EXAM NAME:";
             // 
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(56, 18);
+            label24.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label24.Location = new Point(47, 17);
             label24.Name = "label24";
-            label24.Size = new Size(92, 15);
+            label24.Size = new Size(123, 20);
             label24.TabIndex = 0;
             label24.Text = "MANAGE EXAM";
-            // 
-            // textBoxExamName
-            // 
-            textBoxExamName.Location = new Point(483, 134);
-            textBoxExamName.Name = "textBoxExamName";
-            textBoxExamName.Size = new Size(116, 23);
-            textBoxExamName.TabIndex = 36;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(403, 138);
-            label23.Name = "label23";
-            label23.Size = new Size(74, 15);
-            label23.TabIndex = 35;
-            label23.Text = "Exam Name:";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(785, 10);
-            label20.Name = "label20";
-            label20.Size = new Size(38, 15);
-            label20.TabIndex = 34;
-            label20.Text = "FALSE";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(732, 10);
-            label21.Name = "label21";
-            label21.Size = new Size(44, 15);
-            label21.TabIndex = 33;
-            label21.Text = "BLANK";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(686, 10);
-            label22.Name = "label22";
-            label22.Size = new Size(34, 15);
-            label22.TabIndex = 32;
-            label22.Text = "TRUE";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(561, 10);
+            label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label19.Location = new Point(770, 13);
             label19.Name = "label19";
-            label19.Size = new Size(38, 15);
+            label19.Size = new Size(39, 15);
             label19.TabIndex = 31;
             label19.Text = "FALSE";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(508, 10);
+            label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label18.Location = new Point(717, 13);
             label18.Name = "label18";
             label18.Size = new Size(44, 15);
             label18.TabIndex = 30;
@@ -428,249 +480,264 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(462, 10);
+            label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label17.Location = new Point(671, 13);
             label17.Name = "label17";
-            label17.Size = new Size(34, 15);
+            label17.Size = new Size(35, 15);
             label17.TabIndex = 29;
             label17.Text = "TRUE";
             // 
             // btnAddFromFile
             // 
-            btnAddFromFile.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            btnAddFromFile.Location = new Point(801, 183);
+            btnAddFromFile.BackColor = Color.FromArgb(161, 164, 175);
+            btnAddFromFile.FlatStyle = FlatStyle.Popup;
+            btnAddFromFile.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAddFromFile.ForeColor = Color.White;
+            btnAddFromFile.Location = new Point(801, 214);
             btnAddFromFile.Name = "btnAddFromFile";
             btnAddFromFile.Size = new Size(47, 23);
-            btnAddFromFile.TabIndex = 28;
+            btnAddFromFile.TabIndex = 24;
             btnAddFromFile.Text = "📁";
-            btnAddFromFile.UseVisualStyleBackColor = true;
+            btnAddFromFile.UseVisualStyleBackColor = false;
             // 
             // textBoxBlankScience
             // 
-            textBoxBlankScience.Location = new Point(507, 57);
+            textBoxBlankScience.Location = new Point(717, 60);
             textBoxBlankScience.Name = "textBoxBlankScience";
             textBoxBlankScience.Size = new Size(45, 23);
-            textBoxBlankScience.TabIndex = 27;
+            textBoxBlankScience.TabIndex = 6;
             // 
             // textBoxTrueScience
             // 
-            textBoxTrueScience.Location = new Point(456, 57);
+            textBoxTrueScience.Location = new Point(666, 60);
             textBoxTrueScience.Name = "textBoxTrueScience";
             textBoxTrueScience.Size = new Size(45, 23);
-            textBoxTrueScience.TabIndex = 26;
+            textBoxTrueScience.TabIndex = 5;
             // 
             // textBoxFalseScience
             // 
-            textBoxFalseScience.Location = new Point(558, 57);
+            textBoxFalseScience.Location = new Point(768, 60);
             textBoxFalseScience.Name = "textBoxFalseScience";
             textBoxFalseScience.Size = new Size(45, 23);
-            textBoxFalseScience.TabIndex = 26;
+            textBoxFalseScience.TabIndex = 7;
             // 
             // textBoxFalseMath
             // 
-            textBoxFalseMath.Location = new Point(558, 28);
+            textBoxFalseMath.Location = new Point(768, 31);
             textBoxFalseMath.Name = "textBoxFalseMath";
             textBoxFalseMath.Size = new Size(45, 23);
-            textBoxFalseMath.TabIndex = 25;
+            textBoxFalseMath.TabIndex = 4;
             // 
             // textBoxBlankMath
             // 
-            textBoxBlankMath.Location = new Point(507, 28);
+            textBoxBlankMath.Location = new Point(717, 31);
             textBoxBlankMath.Name = "textBoxBlankMath";
             textBoxBlankMath.Size = new Size(45, 23);
-            textBoxBlankMath.TabIndex = 24;
+            textBoxBlankMath.TabIndex = 3;
             // 
             // textBoxTrueMath
             // 
-            textBoxTrueMath.Location = new Point(456, 28);
+            textBoxTrueMath.Location = new Point(666, 31);
             textBoxTrueMath.Name = "textBoxTrueMath";
             textBoxTrueMath.Size = new Size(45, 23);
-            textBoxTrueMath.TabIndex = 23;
+            textBoxTrueMath.TabIndex = 2;
             // 
             // textBoxFalseEnglish
             // 
-            textBoxFalseEnglish.Location = new Point(783, 116);
+            textBoxFalseEnglish.Location = new Point(768, 176);
             textBoxFalseEnglish.Name = "textBoxFalseEnglish";
             textBoxFalseEnglish.Size = new Size(45, 23);
-            textBoxFalseEnglish.TabIndex = 22;
+            textBoxFalseEnglish.TabIndex = 19;
             // 
             // textBoxBlankEnglish
             // 
-            textBoxBlankEnglish.Location = new Point(732, 116);
+            textBoxBlankEnglish.Location = new Point(717, 176);
             textBoxBlankEnglish.Name = "textBoxBlankEnglish";
             textBoxBlankEnglish.Size = new Size(45, 23);
-            textBoxBlankEnglish.TabIndex = 21;
+            textBoxBlankEnglish.TabIndex = 18;
             // 
             // textBoxTrueEnglish
             // 
-            textBoxTrueEnglish.Location = new Point(681, 116);
+            textBoxTrueEnglish.Location = new Point(666, 176);
             textBoxTrueEnglish.Name = "textBoxTrueEnglish";
             textBoxTrueEnglish.Size = new Size(45, 23);
-            textBoxTrueEnglish.TabIndex = 20;
+            textBoxTrueEnglish.TabIndex = 17;
             // 
             // textBoxFalseReligion
             // 
-            textBoxFalseReligion.Location = new Point(783, 88);
+            textBoxFalseReligion.Location = new Point(768, 148);
             textBoxFalseReligion.Name = "textBoxFalseReligion";
             textBoxFalseReligion.Size = new Size(45, 23);
-            textBoxFalseReligion.TabIndex = 19;
+            textBoxFalseReligion.TabIndex = 16;
             // 
             // textBoxBlankReligion
             // 
-            textBoxBlankReligion.Location = new Point(732, 87);
+            textBoxBlankReligion.Location = new Point(717, 147);
             textBoxBlankReligion.Name = "textBoxBlankReligion";
             textBoxBlankReligion.Size = new Size(45, 23);
-            textBoxBlankReligion.TabIndex = 18;
+            textBoxBlankReligion.TabIndex = 15;
             // 
             // textBoxTrueReligion
             // 
-            textBoxTrueReligion.Location = new Point(681, 87);
+            textBoxTrueReligion.Location = new Point(666, 147);
             textBoxTrueReligion.Name = "textBoxTrueReligion";
             textBoxTrueReligion.Size = new Size(45, 23);
-            textBoxTrueReligion.TabIndex = 17;
+            textBoxTrueReligion.TabIndex = 14;
             // 
             // textBoxFalseHistory
             // 
-            textBoxFalseHistory.Location = new Point(783, 59);
+            textBoxFalseHistory.Location = new Point(768, 119);
             textBoxFalseHistory.Name = "textBoxFalseHistory";
             textBoxFalseHistory.Size = new Size(45, 23);
-            textBoxFalseHistory.TabIndex = 16;
+            textBoxFalseHistory.TabIndex = 13;
             // 
             // textBoxBlankHistory
             // 
-            textBoxBlankHistory.Location = new Point(732, 58);
+            textBoxBlankHistory.Location = new Point(717, 118);
             textBoxBlankHistory.Name = "textBoxBlankHistory";
             textBoxBlankHistory.Size = new Size(45, 23);
-            textBoxBlankHistory.TabIndex = 15;
+            textBoxBlankHistory.TabIndex = 12;
             // 
             // textBoxTrueHistory
             // 
-            textBoxTrueHistory.Location = new Point(681, 58);
+            textBoxTrueHistory.Location = new Point(666, 118);
             textBoxTrueHistory.Name = "textBoxTrueHistory";
             textBoxTrueHistory.Size = new Size(45, 23);
-            textBoxTrueHistory.TabIndex = 14;
+            textBoxTrueHistory.TabIndex = 11;
             // 
             // textBoxFalseTurkish
             // 
-            textBoxFalseTurkish.Location = new Point(783, 29);
+            textBoxFalseTurkish.Location = new Point(768, 89);
             textBoxFalseTurkish.Name = "textBoxFalseTurkish";
             textBoxFalseTurkish.Size = new Size(45, 23);
-            textBoxFalseTurkish.TabIndex = 13;
+            textBoxFalseTurkish.TabIndex = 10;
             // 
             // textBoxBlankTurkish
             // 
-            textBoxBlankTurkish.Location = new Point(732, 29);
+            textBoxBlankTurkish.Location = new Point(717, 89);
             textBoxBlankTurkish.Name = "textBoxBlankTurkish";
             textBoxBlankTurkish.Size = new Size(45, 23);
-            textBoxBlankTurkish.TabIndex = 12;
+            textBoxBlankTurkish.TabIndex = 9;
             // 
             // textBoxTrueTurkish
             // 
-            textBoxTrueTurkish.Location = new Point(681, 29);
+            textBoxTrueTurkish.Location = new Point(666, 89);
             textBoxTrueTurkish.Name = "textBoxTrueTurkish";
             textBoxTrueTurkish.Size = new Size(45, 23);
-            textBoxTrueTurkish.TabIndex = 11;
+            textBoxTrueTurkish.TabIndex = 8;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(630, 116);
+            label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label13.Location = new Point(613, 176);
             label13.Name = "label13";
-            label13.Size = new Size(45, 15);
+            label13.Size = new Size(53, 17);
             label13.TabIndex = 10;
             label13.Text = "English";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(625, 88);
+            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label12.Location = new Point(608, 148);
             label12.Name = "label12";
-            label12.Size = new Size(50, 15);
+            label12.Size = new Size(59, 17);
             label12.TabIndex = 9;
             label12.Text = "Religion";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(630, 60);
+            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label11.Location = new Point(613, 120);
             label11.Name = "label11";
-            label11.Size = new Size(45, 15);
+            label11.Size = new Size(54, 17);
             label11.TabIndex = 8;
             label11.Text = "History";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(630, 34);
+            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label10.Location = new Point(613, 94);
             label10.Name = "label10";
-            label10.Size = new Size(45, 15);
+            label10.Size = new Size(53, 17);
             label10.TabIndex = 7;
             label10.Text = "Turkish";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(403, 61);
+            label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label9.Location = new Point(612, 63);
             label9.Name = "label9";
-            label9.Size = new Size(47, 15);
+            label9.Size = new Size(53, 17);
             label9.TabIndex = 6;
             label9.Text = "Science";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(374, 34);
+            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label8.Location = new Point(578, 34);
             label8.Name = "label8";
-            label8.Size = new Size(76, 15);
+            label8.Size = new Size(87, 17);
             label8.TabIndex = 5;
             label8.Text = "Mathematics";
             // 
             // btnAddResult
             // 
-            btnAddResult.Location = new Point(438, 183);
+            btnAddResult.BackColor = Color.FromArgb(161, 164, 175);
+            btnAddResult.FlatStyle = FlatStyle.Popup;
+            btnAddResult.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAddResult.ForeColor = Color.White;
+            btnAddResult.Location = new Point(438, 214);
             btnAddResult.Name = "btnAddResult";
             btnAddResult.Size = new Size(114, 23);
-            btnAddResult.TabIndex = 4;
+            btnAddResult.TabIndex = 21;
             btnAddResult.Text = "Add Result";
-            btnAddResult.UseVisualStyleBackColor = true;
+            btnAddResult.UseVisualStyleBackColor = false;
             btnAddResult.Click += btnAddResult_Click;
             // 
             // btnShowResults
             // 
-            btnShowResults.Location = new Point(681, 183);
+            btnShowResults.BackColor = Color.FromArgb(161, 164, 175);
+            btnShowResults.FlatStyle = FlatStyle.Popup;
+            btnShowResults.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnShowResults.ForeColor = Color.White;
+            btnShowResults.Location = new Point(681, 214);
             btnShowResults.Name = "btnShowResults";
             btnShowResults.Size = new Size(114, 23);
-            btnShowResults.TabIndex = 3;
+            btnShowResults.TabIndex = 23;
             btnShowResults.Text = "Show Results";
-            btnShowResults.UseVisualStyleBackColor = true;
+            btnShowResults.UseVisualStyleBackColor = false;
             btnShowResults.Click += btnShowResults_Click;
             // 
             // dataGridViewResults
             // 
+            dataGridViewResults.AllowUserToAddRows = false;
+            dataGridViewResults.AllowUserToDeleteRows = false;
+            dataGridViewResults.AllowUserToResizeColumns = false;
+            dataGridViewResults.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = Color.MistyRose;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewResults.BackgroundColor = Color.White;
             dataGridViewResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewResults.Location = new Point(6, 212);
+            dataGridViewResults.Location = new Point(6, 243);
             dataGridViewResults.Name = "dataGridViewResults";
-            dataGridViewResults.Size = new Size(848, 254);
-            dataGridViewResults.TabIndex = 2;
-            // 
-            // textBoxTestStudentID
-            // 
-            textBoxTestStudentID.Location = new Point(483, 105);
-            textBoxTestStudentID.Name = "textBoxTestStudentID";
-            textBoxTestStudentID.Size = new Size(116, 23);
-            textBoxTestStudentID.TabIndex = 1;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(412, 108);
-            label7.Name = "label7";
-            label7.Size = new Size(65, 15);
-            label7.TabIndex = 0;
-            label7.Text = "Student ID:";
+            dataGridViewResults.ReadOnly = true;
+            dataGridViewResults.RowHeadersVisible = false;
+            dataGridViewResults.Size = new Size(842, 223);
+            dataGridViewResults.TabIndex = 25;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(btnListStudents);
+            tabPage1.BackColor = Color.Lavender;
             tabPage1.Controls.Add(textBoxAdress);
             tabPage1.Controls.Add(label16);
             tabPage1.Controls.Add(label15);
@@ -678,12 +745,7 @@
             tabPage1.Controls.Add(textBoxEmail);
             tabPage1.Controls.Add(radioWoman);
             tabPage1.Controls.Add(radioMan);
-            tabPage1.Controls.Add(btnDeleteStudent);
-            tabPage1.Controls.Add(dataGridViewStudents);
-            tabPage1.Controls.Add(btnUpdateStudent);
             tabPage1.Controls.Add(textBoxSurname);
-            tabPage1.Controls.Add(btnAddStudent);
-            tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(textBoxPassword);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(textBoxUsername);
@@ -693,110 +755,120 @@
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(textBoxStudentID);
             tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(btnListStudents);
+            tabPage1.Controls.Add(btnDeleteStudent);
+            tabPage1.Controls.Add(dataGridViewStudents);
+            tabPage1.Controls.Add(btnUpdateStudent);
+            tabPage1.Controls.Add(btnAddStudent);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(854, 472);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "STUDENT CONTROL PANEL";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnListStudents
-            // 
-            btnListStudents.Location = new Point(689, 144);
-            btnListStudents.Name = "btnListStudents";
-            btnListStudents.Size = new Size(75, 23);
-            btnListStudents.TabIndex = 22;
-            btnListStudents.Text = "LIST";
-            btnListStudents.UseVisualStyleBackColor = true;
-            btnListStudents.Click += btnListStudent_Click;
+            tabPage1.Text = "Manage Student";
             // 
             // textBoxAdress
             // 
-            textBoxAdress.Location = new Point(384, 108);
+            textBoxAdress.Location = new Point(426, 105);
             textBoxAdress.Multiline = true;
             textBoxAdress.Name = "textBoxAdress";
             textBoxAdress.Size = new Size(220, 81);
-            textBoxAdress.TabIndex = 21;
+            textBoxAdress.TabIndex = 8;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(319, 111);
+            label16.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label16.Location = new Point(350, 106);
             label16.Name = "label16";
-            label16.Size = new Size(59, 15);
+            label16.Size = new Size(70, 17);
             label16.TabIndex = 20;
             label16.Text = "ADDRESS:";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(73, 163);
+            label15.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label15.Location = new Point(86, 161);
             label15.Name = "label15";
-            label15.Size = new Size(54, 15);
+            label15.Size = new Size(63, 17);
             label15.TabIndex = 19;
             label15.Text = "GENDER:";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(78, 135);
+            label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label14.Location = new Point(93, 133);
             label14.Name = "label14";
-            label14.Size = new Size(49, 15);
+            label14.Size = new Size(56, 17);
             label14.TabIndex = 18;
             label14.Text = "E-MAIL:";
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(133, 132);
+            textBoxEmail.Location = new Point(155, 132);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(188, 23);
-            textBoxEmail.TabIndex = 17;
+            textBoxEmail.TabIndex = 3;
             // 
             // radioWoman
             // 
             radioWoman.AutoSize = true;
-            radioWoman.Location = new Point(195, 161);
+            radioWoman.Font = new Font("Segoe UI", 9.75F);
+            radioWoman.Location = new Point(217, 161);
             radioWoman.Name = "radioWoman";
-            radioWoman.Size = new Size(73, 19);
-            radioWoman.TabIndex = 16;
+            radioWoman.Size = new Size(70, 21);
+            radioWoman.TabIndex = 5;
             radioWoman.TabStop = true;
-            radioWoman.Text = "WOMAN";
+            radioWoman.Text = "Woman";
             radioWoman.UseVisualStyleBackColor = true;
             // 
             // radioMan
             // 
             radioMan.AutoSize = true;
-            radioMan.Location = new Point(133, 161);
+            radioMan.Font = new Font("Segoe UI", 9.75F);
+            radioMan.Location = new Point(155, 161);
             radioMan.Name = "radioMan";
-            radioMan.Size = new Size(53, 19);
-            radioMan.TabIndex = 15;
+            radioMan.Size = new Size(52, 21);
+            radioMan.TabIndex = 4;
             radioMan.TabStop = true;
-            radioMan.Text = "MAN";
+            radioMan.Text = "Man";
             radioMan.UseVisualStyleBackColor = true;
             // 
-            // btnTestHistory
+            // btnListStudents
             // 
-            btnTestHistory.Location = new Point(6, 183);
-            btnTestHistory.Name = "btnTestHistory";
-            btnTestHistory.Size = new Size(115, 23);
-            btnTestHistory.TabIndex = 39;
-            btnTestHistory.Text = "Test History";
-            btnTestHistory.UseVisualStyleBackColor = true;
-            btnTestHistory.Click += btnTestHistory_Click;
+            btnListStudents.BackColor = Color.FromArgb(161, 164, 175);
+            btnListStudents.FlatStyle = FlatStyle.Popup;
+            btnListStudents.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnListStudents.ForeColor = Color.White;
+            btnListStudents.Location = new Point(711, 144);
+            btnListStudents.Name = "btnListStudents";
+            btnListStudents.Size = new Size(75, 23);
+            btnListStudents.TabIndex = 12;
+            btnListStudents.Text = "LIST";
+            btnListStudents.UseVisualStyleBackColor = false;
+            btnListStudents.Click += btnListStudent_Click;
             // 
             // AdminPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(245, 247, 255);
             ClientSize = new Size(886, 524);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AdminPanel";
-            Text = "AdminPanel";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "LGS Tracking System - Admin";
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).EndInit();
@@ -806,8 +878,6 @@
         }
 
         #endregion
-
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -858,14 +928,9 @@
         private Label label15;
         private Label label14;
         private TextBox textBoxEmail;
-        private RadioButton radioWoman;
-        private RadioButton radioMan;
         private TextBox textBoxAdress;
         private Label label16;
         private Button btnListStudents;
-        private Label label20;
-        private Label label21;
-        private Label label22;
         private Label label19;
         private Label label18;
         private Label label17;
@@ -879,5 +944,8 @@
         private Label label25;
         private Button btnRemoveResult;
         private Button btnTestHistory;
+        private RadioButton radioWoman;
+        private RadioButton radioMan;
+        private Panel panel2;
     }
 }

@@ -23,35 +23,53 @@ namespace LGSTrackingSystem
                 MessageBox.Show("Please enter both username and password.");
                 return;
             }
-            using (SqlConnection connection = new SqlConnection(connectionString))
+
+            try
             {
-                connection.Open();
-                string query = "SELECT USERTYPE FROM USERS WHERE USERNAME = @username AND PASSWORD = @password";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@username", textBoxUsername.Text);
-                command.Parameters.AddWithValue("@password", textBoxPassword.Text);
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string userType = reader["USERTYPE"].ToString();
-                    if (userType == "Admin")
+                    connection.Open();
+                    string query = @"
+                SELECT U.USERTYPE, S.STUDENT_ID 
+                FROM USERS U
+                LEFT JOIN STUDENTS S ON U.ID = S.USER_ID
+                WHERE U.USERNAME = @username AND U.PASSWORD = @password";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@username", textBoxUsername.Text);
+                    command.Parameters.AddWithValue("@password", textBoxPassword.Text);
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
                     {
-                        AdminPanel adminPanel = new AdminPanel();
-                        adminPanel.Show();
-                        this.Hide();
+                        string userType = reader["USERTYPE"].ToString();
+                        if (userType == "Admin")
+                        {
+                            AdminPanel adminPanel = new AdminPanel();
+                            adminPanel.Show();
+                            this.Hide();
+                        }
+                        else if (userType == "Student")
+                        {
+                            int studentId = Convert.ToInt32(reader["STUDENT_ID"]);
+                            StudentPanel studentPanel = new StudentPanel(studentId);
+                            studentPanel.Show();
+                            this.Hide();
+                        }
                     }
-                    else if (userType == "Student")
+                    else
                     {
-                        StudentPanel studentPanel = new StudentPanel();
-                        studentPanel.Show();
-                        this.Hide();
+                        MessageBox.Show("Invalid username or password.");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username or password.");
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"A database error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }
