@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Configuration;
 namespace LGSTrackingSystem
 {
     public partial class StudentPanel : Form
     {
-        string connectionString = "Data Source=ERAY\\SQLEXPRESS;Initial Catalog=LGSDB;Integrated Security=True;TrustServerCertificate=true";
+        string connectionString = ConfigurationManager.ConnectionStrings["LGSDB"].ConnectionString;
         private int studentId;
-
+        private StudentReportPanel studentReportPanel;
         public StudentPanel(int studentId)
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace LGSTrackingSystem
             bool examNameCheck = ExistingExamName();
             bool existResult = checkExistResult();
 
-            if (examNameCheck==false)
+            if (examNameCheck == false)
             {
                 MessageBox.Show("Test name already exists. Try different name.");
             }
@@ -39,7 +39,7 @@ namespace LGSTrackingSystem
                 MessageBox.Show("Result already exists.");
             }
 
-            if (validation == false || examNameCheck ==false || existResult == false)
+            if (validation == false || examNameCheck == false || existResult == false)
             {
                 return;
             }
@@ -196,8 +196,7 @@ namespace LGSTrackingSystem
                 {
                     connection.Open();
                     string showResultQuery = @"
-                SELECT 
-                    STUDENT_ID AS [Student ID], 
+                SELECT                     
                     (SELECT EXAM_NAME FROM EXAMS WHERE EXAMS.EXAM_ID = RESULTS.EXAM_ID) AS [Exam Name], 
                     SUBJECT_NAME AS [Subject Name], 
                     TRUE_COUNT AS [True Count], 
@@ -401,6 +400,58 @@ namespace LGSTrackingSystem
                     labelWelcome.Text = "Welcome, Student!";
                     return;
                 }
+            }
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            textBoxExamName.Clear();
+            textBoxTrueMath.Clear();
+            textBoxFalseMath.Clear();
+            textBoxBlankMath.Clear();
+            textBoxTrueScience.Clear();
+            textBoxFalseScience.Clear();
+            textBoxBlankScience.Clear();
+            textBoxTrueTurkish.Clear();
+            textBoxFalseTurkish.Clear();
+            textBoxBlankTurkish.Clear();
+            textBoxTrueHistory.Clear();
+            textBoxFalseHistory.Clear();
+            textBoxBlankHistory.Clear();
+            textBoxTrueReligion.Clear();
+            textBoxFalseReligion.Clear();
+            textBoxBlankReligion.Clear();
+            textBoxTrueEnglish.Clear();
+            textBoxFalseEnglish.Clear();
+            textBoxBlankEnglish.Clear();
+            dataGridViewResults.DataSource = null;
+        }
+        private void btnShowPanel_Click(object sender, EventArgs e)
+        {
+            if (studentReportPanel == null || studentReportPanel.IsDisposed)
+            {
+                studentReportPanel = new StudentReportPanel(studentId);
+                studentReportPanel.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+                studentReportPanel.Show();
+                this.LocationChanged += StudentPanel_ReportPanel_LocationChanged;
+                this.FormClosed += StudentPanel_ReportPanel_FormClosed;
+            }
+            else
+            {
+                studentReportPanel.BringToFront();
+            }
+        }
+        private void StudentPanel_ReportPanel_LocationChanged(object sender, EventArgs e)
+        {
+            if (studentReportPanel != null && !studentReportPanel.IsDisposed)
+            {
+                studentReportPanel.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+            }
+        }
+        private void StudentPanel_ReportPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (studentReportPanel != null && !studentReportPanel.IsDisposed)
+            {
+                studentReportPanel.Close();
             }
         }
     }

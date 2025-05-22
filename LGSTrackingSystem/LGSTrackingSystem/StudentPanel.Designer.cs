@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentPanel));
             dataGridViewResults = new DataGridView();
             textBoxExamName = new TextBox();
             label23 = new Label();
@@ -70,8 +71,11 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
+            btnClear = new Button();
+            btnShowPanel = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewResults
@@ -80,33 +84,34 @@
             dataGridViewResults.AllowUserToDeleteRows = false;
             dataGridViewResults.AllowUserToResizeColumns = false;
             dataGridViewResults.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = Color.MistyRose;
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.RoyalBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = Color.MistyRose;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewResults.BackgroundColor = Color.White;
             dataGridViewResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewResults.Location = new Point(12, 269);
             dataGridViewResults.Name = "dataGridViewResults";
             dataGridViewResults.ReadOnly = true;
+            dataGridViewResults.RowHeadersVisible = false;
             dataGridViewResults.Size = new Size(769, 243);
-            dataGridViewResults.TabIndex = 24;
+            dataGridViewResults.TabIndex = 6;
             // 
             // textBoxExamName
             // 
-            textBoxExamName.Location = new Point(346, 157);
+            textBoxExamName.Location = new Point(295, 113);
             textBoxExamName.Name = "textBoxExamName";
             textBoxExamName.Size = new Size(116, 23);
-            textBoxExamName.TabIndex = 19;
+            textBoxExamName.TabIndex = 18;
             // 
             // label23
             // 
             label23.AutoSize = true;
             label23.BackColor = Color.Lavender;
             label23.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label23.Location = new Point(258, 159);
+            label23.Location = new Point(207, 115);
             label23.Name = "label23";
             label23.Size = new Size(85, 17);
             label23.TabIndex = 69;
@@ -117,7 +122,7 @@
             label20.AutoSize = true;
             label20.BackColor = Color.FromArgb(245, 247, 255);
             label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label20.Location = new Point(657, 59);
+            label20.Location = new Point(606, 17);
             label20.Name = "label20";
             label20.Size = new Size(39, 15);
             label20.TabIndex = 68;
@@ -128,7 +133,7 @@
             label21.AutoSize = true;
             label21.BackColor = Color.FromArgb(245, 247, 255);
             label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label21.Location = new Point(604, 59);
+            label21.Location = new Point(553, 17);
             label21.Name = "label21";
             label21.Size = new Size(44, 15);
             label21.TabIndex = 67;
@@ -139,7 +144,7 @@
             label22.AutoSize = true;
             label22.BackColor = Color.FromArgb(245, 247, 255);
             label22.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label22.Location = new Point(558, 59);
+            label22.Location = new Point(507, 17);
             label22.Name = "label22";
             label22.Size = new Size(35, 15);
             label22.TabIndex = 66;
@@ -150,7 +155,7 @@
             label19.AutoSize = true;
             label19.BackColor = Color.FromArgb(245, 247, 255);
             label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label19.Location = new Point(420, 59);
+            label19.Location = new Point(369, 17);
             label19.Name = "label19";
             label19.Size = new Size(39, 15);
             label19.TabIndex = 65;
@@ -161,7 +166,7 @@
             label18.AutoSize = true;
             label18.BackColor = Color.FromArgb(245, 247, 255);
             label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label18.Location = new Point(367, 59);
+            label18.Location = new Point(316, 17);
             label18.Name = "label18";
             label18.Size = new Size(44, 15);
             label18.TabIndex = 64;
@@ -172,7 +177,7 @@
             label17.AutoSize = true;
             label17.BackColor = Color.FromArgb(245, 247, 255);
             label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label17.Location = new Point(321, 59);
+            label17.Location = new Point(270, 17);
             label17.Name = "label17";
             label17.Size = new Size(35, 15);
             label17.TabIndex = 63;
@@ -180,126 +185,126 @@
             // 
             // textBoxBlankScience
             // 
-            textBoxBlankScience.Location = new Point(366, 106);
+            textBoxBlankScience.Location = new Point(315, 62);
             textBoxBlankScience.Name = "textBoxBlankScience";
             textBoxBlankScience.Size = new Size(45, 23);
             textBoxBlankScience.TabIndex = 4;
             // 
             // textBoxTrueScience
             // 
-            textBoxTrueScience.Location = new Point(315, 106);
+            textBoxTrueScience.Location = new Point(264, 62);
             textBoxTrueScience.Name = "textBoxTrueScience";
             textBoxTrueScience.Size = new Size(45, 23);
             textBoxTrueScience.TabIndex = 3;
             // 
             // textBoxFalseScience
             // 
-            textBoxFalseScience.Location = new Point(417, 106);
+            textBoxFalseScience.Location = new Point(366, 62);
             textBoxFalseScience.Name = "textBoxFalseScience";
             textBoxFalseScience.Size = new Size(45, 23);
             textBoxFalseScience.TabIndex = 5;
             // 
             // textBoxFalseMath
             // 
-            textBoxFalseMath.Location = new Point(417, 77);
+            textBoxFalseMath.Location = new Point(366, 35);
             textBoxFalseMath.Name = "textBoxFalseMath";
             textBoxFalseMath.Size = new Size(45, 23);
             textBoxFalseMath.TabIndex = 2;
             // 
             // textBoxBlankMath
             // 
-            textBoxBlankMath.Location = new Point(366, 77);
+            textBoxBlankMath.Location = new Point(315, 35);
             textBoxBlankMath.Name = "textBoxBlankMath";
             textBoxBlankMath.Size = new Size(45, 23);
             textBoxBlankMath.TabIndex = 1;
             // 
             // textBoxTrueMath
             // 
-            textBoxTrueMath.Location = new Point(315, 77);
+            textBoxTrueMath.Location = new Point(264, 35);
             textBoxTrueMath.Name = "textBoxTrueMath";
             textBoxTrueMath.Size = new Size(45, 23);
             textBoxTrueMath.TabIndex = 0;
             // 
             // textBoxFalseEnglish
             // 
-            textBoxFalseEnglish.Location = new Point(655, 165);
+            textBoxFalseEnglish.Location = new Point(604, 121);
             textBoxFalseEnglish.Name = "textBoxFalseEnglish";
             textBoxFalseEnglish.Size = new Size(45, 23);
-            textBoxFalseEnglish.TabIndex = 18;
+            textBoxFalseEnglish.TabIndex = 17;
             // 
             // textBoxBlankEnglish
             // 
-            textBoxBlankEnglish.Location = new Point(604, 165);
+            textBoxBlankEnglish.Location = new Point(553, 121);
             textBoxBlankEnglish.Name = "textBoxBlankEnglish";
             textBoxBlankEnglish.Size = new Size(45, 23);
-            textBoxBlankEnglish.TabIndex = 17;
+            textBoxBlankEnglish.TabIndex = 16;
             // 
             // textBoxTrueEnglish
             // 
-            textBoxTrueEnglish.Location = new Point(553, 165);
+            textBoxTrueEnglish.Location = new Point(502, 121);
             textBoxTrueEnglish.Name = "textBoxTrueEnglish";
             textBoxTrueEnglish.Size = new Size(45, 23);
-            textBoxTrueEnglish.TabIndex = 16;
+            textBoxTrueEnglish.TabIndex = 15;
             // 
             // textBoxFalseReligion
             // 
-            textBoxFalseReligion.Location = new Point(655, 137);
+            textBoxFalseReligion.Location = new Point(604, 93);
             textBoxFalseReligion.Name = "textBoxFalseReligion";
             textBoxFalseReligion.Size = new Size(45, 23);
-            textBoxFalseReligion.TabIndex = 15;
+            textBoxFalseReligion.TabIndex = 14;
             // 
             // textBoxBlankReligion
             // 
-            textBoxBlankReligion.Location = new Point(604, 136);
+            textBoxBlankReligion.Location = new Point(553, 92);
             textBoxBlankReligion.Name = "textBoxBlankReligion";
             textBoxBlankReligion.Size = new Size(45, 23);
-            textBoxBlankReligion.TabIndex = 14;
+            textBoxBlankReligion.TabIndex = 13;
             // 
             // textBoxTrueReligion
             // 
-            textBoxTrueReligion.Location = new Point(553, 136);
+            textBoxTrueReligion.Location = new Point(502, 92);
             textBoxTrueReligion.Name = "textBoxTrueReligion";
             textBoxTrueReligion.Size = new Size(45, 23);
-            textBoxTrueReligion.TabIndex = 13;
+            textBoxTrueReligion.TabIndex = 12;
             // 
             // textBoxFalseHistory
             // 
-            textBoxFalseHistory.Location = new Point(655, 108);
+            textBoxFalseHistory.Location = new Point(604, 63);
             textBoxFalseHistory.Name = "textBoxFalseHistory";
             textBoxFalseHistory.Size = new Size(45, 23);
-            textBoxFalseHistory.TabIndex = 12;
+            textBoxFalseHistory.TabIndex = 11;
             // 
             // textBoxBlankHistory
             // 
-            textBoxBlankHistory.Location = new Point(604, 107);
+            textBoxBlankHistory.Location = new Point(553, 63);
             textBoxBlankHistory.Name = "textBoxBlankHistory";
             textBoxBlankHistory.Size = new Size(45, 23);
-            textBoxBlankHistory.TabIndex = 11;
+            textBoxBlankHistory.TabIndex = 10;
             // 
             // textBoxTrueHistory
             // 
-            textBoxTrueHistory.Location = new Point(553, 107);
+            textBoxTrueHistory.Location = new Point(502, 63);
             textBoxTrueHistory.Name = "textBoxTrueHistory";
             textBoxTrueHistory.Size = new Size(45, 23);
-            textBoxTrueHistory.TabIndex = 10;
+            textBoxTrueHistory.TabIndex = 9;
             // 
             // textBoxFalseTurkish
             // 
-            textBoxFalseTurkish.Location = new Point(655, 78);
+            textBoxFalseTurkish.Location = new Point(604, 36);
             textBoxFalseTurkish.Name = "textBoxFalseTurkish";
             textBoxFalseTurkish.Size = new Size(45, 23);
-            textBoxFalseTurkish.TabIndex = 9;
+            textBoxFalseTurkish.TabIndex = 8;
             // 
             // textBoxBlankTurkish
             // 
-            textBoxBlankTurkish.Location = new Point(604, 78);
+            textBoxBlankTurkish.Location = new Point(553, 36);
             textBoxBlankTurkish.Name = "textBoxBlankTurkish";
             textBoxBlankTurkish.Size = new Size(45, 23);
-            textBoxBlankTurkish.TabIndex = 8;
+            textBoxBlankTurkish.TabIndex = 7;
             // 
             // textBoxTrueTurkish
             // 
-            textBoxTrueTurkish.Location = new Point(553, 78);
+            textBoxTrueTurkish.Location = new Point(502, 36);
             textBoxTrueTurkish.Name = "textBoxTrueTurkish";
             textBoxTrueTurkish.Size = new Size(45, 23);
             textBoxTrueTurkish.TabIndex = 6;
@@ -309,7 +314,7 @@
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(245, 247, 255);
             label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label13.Location = new Point(496, 164);
+            label13.Location = new Point(445, 120);
             label13.Name = "label13";
             label13.Size = new Size(53, 17);
             label13.TabIndex = 44;
@@ -320,7 +325,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.FromArgb(245, 247, 255);
             label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label12.Location = new Point(491, 136);
+            label12.Location = new Point(440, 92);
             label12.Name = "label12";
             label12.Size = new Size(59, 17);
             label12.TabIndex = 43;
@@ -331,7 +336,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.FromArgb(245, 247, 255);
             label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label11.Location = new Point(496, 108);
+            label11.Location = new Point(444, 66);
             label11.Name = "label11";
             label11.Size = new Size(54, 17);
             label11.TabIndex = 42;
@@ -342,7 +347,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.FromArgb(245, 247, 255);
             label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label10.Location = new Point(496, 82);
+            label10.Location = new Point(445, 40);
             label10.Name = "label10";
             label10.Size = new Size(53, 17);
             label10.TabIndex = 41;
@@ -353,7 +358,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(245, 247, 255);
             label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label9.Location = new Point(254, 108);
+            label9.Location = new Point(203, 64);
             label9.Name = "label9";
             label9.Size = new Size(53, 17);
             label9.TabIndex = 40;
@@ -364,7 +369,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.FromArgb(245, 247, 255);
             label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label8.Location = new Point(225, 81);
+            label8.Location = new Point(174, 39);
             label8.Name = "label8";
             label8.Size = new Size(87, 17);
             label8.TabIndex = 39;
@@ -378,7 +383,7 @@
             btnTestHistory.Location = new Point(12, 240);
             btnTestHistory.Name = "btnTestHistory";
             btnTestHistory.Size = new Size(105, 23);
-            btnTestHistory.TabIndex = 20;
+            btnTestHistory.TabIndex = 0;
             btnTestHistory.Text = "Test History";
             btnTestHistory.UseVisualStyleBackColor = false;
             btnTestHistory.Click += btnTestHistory_Click;
@@ -388,10 +393,10 @@
             btnAddResult.BackColor = Color.FromArgb(161, 164, 175);
             btnAddResult.FlatStyle = FlatStyle.Popup;
             btnAddResult.ForeColor = Color.White;
-            btnAddResult.Location = new Point(454, 240);
+            btnAddResult.Location = new Point(328, 240);
             btnAddResult.Name = "btnAddResult";
             btnAddResult.Size = new Size(105, 23);
-            btnAddResult.TabIndex = 21;
+            btnAddResult.TabIndex = 1;
             btnAddResult.Text = "Add Result";
             btnAddResult.UseVisualStyleBackColor = false;
             btnAddResult.Click += btnAddResult_Click;
@@ -411,10 +416,10 @@
             btnShowResults.BackColor = Color.FromArgb(161, 164, 175);
             btnShowResults.FlatStyle = FlatStyle.Popup;
             btnShowResults.ForeColor = Color.White;
-            btnShowResults.Location = new Point(676, 240);
+            btnShowResults.Location = new Point(550, 240);
             btnShowResults.Name = "btnShowResults";
             btnShowResults.Size = new Size(105, 23);
-            btnShowResults.TabIndex = 23;
+            btnShowResults.TabIndex = 3;
             btnShowResults.Text = "Show Results";
             btnShowResults.UseVisualStyleBackColor = false;
             btnShowResults.Click += btnShowResults_Click;
@@ -424,10 +429,10 @@
             btnRemoveResult.BackColor = Color.FromArgb(161, 164, 175);
             btnRemoveResult.FlatStyle = FlatStyle.Popup;
             btnRemoveResult.ForeColor = Color.White;
-            btnRemoveResult.Location = new Point(565, 240);
+            btnRemoveResult.Location = new Point(439, 240);
             btnRemoveResult.Name = "btnRemoveResult";
             btnRemoveResult.Size = new Size(105, 23);
-            btnRemoveResult.TabIndex = 22;
+            btnRemoveResult.TabIndex = 2;
             btnRemoveResult.Text = "Remove Result";
             btnRemoveResult.UseVisualStyleBackColor = false;
             btnRemoveResult.Click += btnRemoveResult_Click;
@@ -436,7 +441,7 @@
             // 
             pictureBox1.BackColor = Color.FromArgb(245, 247, 255);
             pictureBox1.Image = Properties.Resources.person;
-            pictureBox1.Location = new Point(78, 68);
+            pictureBox1.Location = new Point(27, 24);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 120);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -447,7 +452,7 @@
             // 
             panel1.BackColor = Color.Lavender;
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Location = new Point(247, 149);
+            panel1.Location = new Point(196, 105);
             panel1.Name = "panel1";
             panel1.Size = new Size(229, 38);
             panel1.TabIndex = 77;
@@ -456,10 +461,71 @@
             // 
             panel2.BackColor = Color.FromArgb(245, 247, 255);
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Location = new Point(50, 42);
+            panel2.Controls.Add(textBoxFalseTurkish);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(label10);
+            panel2.Controls.Add(textBoxTrueTurkish);
+            panel2.Controls.Add(textBoxBlankTurkish);
+            panel2.Controls.Add(textBoxTrueMath);
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(textBoxBlankMath);
+            panel2.Controls.Add(textBoxFalseMath);
+            panel2.Controls.Add(textBoxExamName);
+            panel2.Controls.Add(label17);
+            panel2.Controls.Add(label23);
+            panel2.Controls.Add(textBoxBlankScience);
+            panel2.Controls.Add(label20);
+            panel2.Controls.Add(textBoxTrueScience);
+            panel2.Controls.Add(label18);
+            panel2.Controls.Add(textBoxFalseScience);
+            panel2.Controls.Add(label21);
+            panel2.Controls.Add(textBoxFalseEnglish);
+            panel2.Controls.Add(label19);
+            panel2.Controls.Add(textBoxBlankEnglish);
+            panel2.Controls.Add(label22);
+            panel2.Controls.Add(textBoxTrueEnglish);
+            panel2.Controls.Add(textBoxTrueHistory);
+            panel2.Controls.Add(textBoxFalseReligion);
+            panel2.Controls.Add(textBoxFalseHistory);
+            panel2.Controls.Add(textBoxBlankReligion);
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(textBoxTrueReligion);
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(textBoxBlankHistory);
+            panel2.Controls.Add(label12);
+            panel2.Controls.Add(label13);
+            panel2.Location = new Point(57, 43);
             panel2.Name = "panel2";
             panel2.Size = new Size(671, 167);
             panel2.TabIndex = 7;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.FromArgb(161, 164, 175);
+            btnClear.FlatStyle = FlatStyle.Popup;
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(715, 240);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(65, 23);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnShowPanel
+            // 
+            btnShowPanel.BackColor = Color.FromArgb(161, 164, 175);
+            btnShowPanel.FlatStyle = FlatStyle.Popup;
+            btnShowPanel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnShowPanel.ForeColor = Color.White;
+            btnShowPanel.Location = new Point(662, 240);
+            btnShowPanel.Name = "btnShowPanel";
+            btnShowPanel.Size = new Size(47, 23);
+            btnShowPanel.TabIndex = 4;
+            btnShowPanel.Text = "📁";
+            btnShowPanel.UseVisualStyleBackColor = false;
+            btnShowPanel.Click += btnShowPanel_Click;
             // 
             // StudentPanel
             // 
@@ -467,53 +533,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lavender;
             ClientSize = new Size(790, 524);
-            Controls.Add(pictureBox1);
+            Controls.Add(btnShowPanel);
+            Controls.Add(btnClear);
             Controls.Add(btnRemoveResult);
             Controls.Add(btnShowResults);
             Controls.Add(labelWelcome);
             Controls.Add(btnAddResult);
             Controls.Add(btnTestHistory);
-            Controls.Add(textBoxExamName);
-            Controls.Add(label23);
-            Controls.Add(label20);
-            Controls.Add(label21);
-            Controls.Add(label22);
-            Controls.Add(label19);
-            Controls.Add(label18);
-            Controls.Add(label17);
-            Controls.Add(textBoxBlankScience);
-            Controls.Add(textBoxTrueScience);
-            Controls.Add(textBoxFalseScience);
-            Controls.Add(textBoxFalseMath);
-            Controls.Add(textBoxBlankMath);
-            Controls.Add(textBoxTrueMath);
-            Controls.Add(textBoxFalseEnglish);
-            Controls.Add(textBoxBlankEnglish);
-            Controls.Add(textBoxTrueEnglish);
-            Controls.Add(textBoxFalseReligion);
-            Controls.Add(textBoxBlankReligion);
-            Controls.Add(textBoxTrueReligion);
-            Controls.Add(textBoxFalseHistory);
-            Controls.Add(textBoxBlankHistory);
-            Controls.Add(textBoxTrueHistory);
-            Controls.Add(textBoxFalseTurkish);
-            Controls.Add(textBoxBlankTurkish);
-            Controls.Add(textBoxTrueTurkish);
-            Controls.Add(label13);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
             Controls.Add(dataGridViewResults);
-            Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "StudentPanel";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LGS Tracking System - Student";
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -561,5 +598,7 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private Panel panel2;
+        private Button btnClear;
+        private Button btnShowPanel;
     }
 }

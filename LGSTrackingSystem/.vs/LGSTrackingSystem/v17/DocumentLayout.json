@@ -7,28 +7,12 @@
       "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\adminpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|c:\\users\\heray\\source\\repos\\lgstrackingsystem\\lgstrackingsystem\\adminpanel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\adminpanel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|c:\\users\\heray\\source\\repos\\lgstrackingsystem\\lgstrackingsystem\\adminpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\adminpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|c:\\users\\heray\\source\\repos\\lgstrackingsystem\\lgstrackingsystem\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|c:\\users\\heray\\source\\repos\\lgstrackingsystem\\lgstrackingsystem\\studentpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\studentpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|c:\\users\\heray\\source\\repos\\lgstrackingsystem\\lgstrackingsystem\\studentpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\studentpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|c:\\users\\heray\\source\\repos\\lgstrackingsystem\\lgstrackingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\lgstrackingsystem\\studentpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B6473364-6206-4EEA-86E2-37799AAD5FB4}|LGSTrackingSystem\\LGSTrackingSystem.csproj|solutionrelative:lgstrackingsystem\\studentpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,54 +38,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminPanel.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\AdminPanel.Designer.cs",
-              "RelativeDocumentMoniker": "LGSTrackingSystem\\AdminPanel.Designer.cs",
-              "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\AdminPanel.Designer.cs",
-              "RelativeToolTip": "LGSTrackingSystem\\AdminPanel.Designer.cs",
-              "ViewState": "AgIAAHQDAAAAAAAAAAAuwLQDAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T00:07:51.122Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StudentPanel.cs",
-              "DocumentMoniker": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\StudentPanel.cs",
-              "RelativeDocumentMoniker": "LGSTrackingSystem\\StudentPanel.cs",
-              "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\StudentPanel.cs",
-              "RelativeToolTip": "LGSTrackingSystem\\StudentPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T08:43:35.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AdminPanel.cs",
-              "DocumentMoniker": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\AdminPanel.cs",
-              "RelativeDocumentMoniker": "LGSTrackingSystem\\AdminPanel.cs",
-              "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\AdminPanel.cs",
-              "RelativeToolTip": "LGSTrackingSystem\\AdminPanel.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAiwDMBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T09:00:15.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "StudentPanel.cs [Design]",
               "DocumentMoniker": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\StudentPanel.cs",
               "RelativeDocumentMoniker": "LGSTrackingSystem\\StudentPanel.cs",
               "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\StudentPanel.cs [Design]",
               "RelativeToolTip": "LGSTrackingSystem\\StudentPanel.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T20:31:50.516Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-22T14:51:31.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentPanel.cs",
+              "DocumentMoniker": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\StudentPanel.cs",
+              "RelativeDocumentMoniker": "LGSTrackingSystem\\StudentPanel.cs",
+              "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\StudentPanel.cs",
+              "RelativeToolTip": "LGSTrackingSystem\\StudentPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T14:51:25.179Z"
             },
             {
               "$type": "Document",
@@ -112,33 +68,8 @@
               "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\AdminPanel.cs [Design]",
               "RelativeToolTip": "LGSTrackingSystem\\AdminPanel.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T20:50:34.039Z",
+              "WhenOpened": "2025-05-22T14:48:35.042Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\LoginPage.cs",
-              "RelativeDocumentMoniker": "LGSTrackingSystem\\LoginPage.cs",
-              "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\LoginPage.cs [Design]",
-              "RelativeToolTip": "LGSTrackingSystem\\LoginPage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T08:43:30.919Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\Program.cs",
-              "RelativeDocumentMoniker": "LGSTrackingSystem\\Program.cs",
-              "ToolTip": "C:\\Users\\heray\\source\\repos\\LGSTrackingSystem\\LGSTrackingSystem\\Program.cs",
-              "RelativeToolTip": "LGSTrackingSystem\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T08:42:50.118Z",
-              "EditorCaption": ""
             }
           ]
         }

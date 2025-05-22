@@ -65,3 +65,11 @@ C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\obj\Debug\net8.0
 C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\obj\Debug\net8.0-windows\LGSTrackingSystem.AdminPanel.resources
 C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\obj\Debug\net8.0-windows\LGSTrackingSystem.StudentPanel.resources
 C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\obj\Debug\net8.0-windows\LGSTrackingSystem.Properties.Resources.resources
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\obj\Debug\net8.0-windows\LGSTrackingSystem.ExamListPanel.resources
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\obj\Debug\net8.0-windows\LGSTrackingSystem.AdminReportPanel.resources
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\bin\Debug\net8.0-windows\OxyPlot.dll
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\bin\Debug\net8.0-windows\OxyPlot.WindowsForms.dll
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\bin\Debug\net8.0-windows\itextsharp.dll
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\obj\Debug\net8.0-windows\LGSTrackingSystem.StudentReportPanel.resources
+C:\Users\heray\source\repos\LGSTrackingSystem\LGSTrackingSystem\bin\Debug\net8.0-windows\LGSTrackingSystem.dll.config

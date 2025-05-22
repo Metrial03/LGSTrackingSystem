@@ -1,11 +1,11 @@
 using Microsoft.Data.SqlClient;
-
+using System.Configuration;
 
 namespace LGSTrackingSystem
 {
     public partial class LoginPage : Form
     {
-        string connectionString = "Data Source=ERAY\\SQLEXPRESS;Initial Catalog=LGSDB;Integrated Security=True;TrustServerCertificate=true";
+        string connectionString = ConfigurationManager.ConnectionStrings["LGSDB"].ConnectionString;
         public LoginPage()
         {
             InitializeComponent();

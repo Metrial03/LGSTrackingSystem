@@ -15,6 +15,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             labelTitle = new Label();
             label1 = new Label();
             textBoxUsername = new TextBox();
@@ -112,6 +113,7 @@
             Controls.Add(checkBoxShowPassword);
             Controls.Add(btnLogin);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "LoginPage";
